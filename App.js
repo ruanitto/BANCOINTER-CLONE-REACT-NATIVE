@@ -10,7 +10,7 @@ export default function App() {
     <>  
       <StatusBar backgroundColor="#FF8700" />
       <Header />
-      <Services />
+     
       <Home />
     </>
   );

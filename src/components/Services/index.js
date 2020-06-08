@@ -1,77 +1,126 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ArrowDown from 'react-native-vector-icons/Feather';
 
 import { Container, Box, Card, Area, AreaImage,
-    Icon, Title
+    Icon, Title, OpenButton
 } from './styles';
 
 export default function Services() {
+    const [isClick, setIsClick] = useState(false);
+
+    const arrFirst = [
+        {
+            id: 1, name: 'Transferências', image: require('../../assets/credit-card.png')
+        },
+        {
+            id: 2, name: 'Pagamentos', image: require('../../assets/credit-card.png')
+        },
+        {
+            id: 3, name: 'Investimentos', image: require('../../assets/credit-card.png')
+        }
+    ]
+
     const array = [
         {
-            id: 1, name: 'Cartões', image: require('../../assets/credit-card.png') 
+            id: 1, name: 'Transferências', image: require('../../assets/credit-card.png')
         },
         {
-            id: 2, name: 'Gift Card', image: require('../../assets/gift.png')
+            id: 2, name: 'Pagamentos', image: require('../../assets/credit-card.png')
         },
         {
-            id: 3, name: 'Seguros', image: require('../../assets/umbrella.png') 
+            id: 3, name: 'Investimentos', image: require('../../assets/credit-card.png')
         },
         {
-            id: 4, name: 'Interpag', image: require('../../assets/credit-card.png') 
+            id: 4, name: 'Cartões', image: require('../../assets/credit-card.png') 
         },
         {
-            id: 5, name: 'Depósito por boleto', image: require('../../assets/transfer.png') 
+            id: 5, name: 'Gift Card', image: require('../../assets/gift.png')
         },
         {
-            id: 6, name: 'Depósito por cheque', image: require('../../assets/dolar.png')
+            id: 6, name: 'Seguros', image: require('../../assets/umbrella.png') 
         },
         {
-            id: 7, name: 'Conta MEI', image: require('../../assets/business-and-finance.png')
+            id: 7, name: 'Interpag', image: require('../../assets/credit-card.png') 
         },
         {
-            id: 8, name: 'Agendamentos', image: require('../../assets/calendar.png') 
+            id: 8, name: 'Depósito por boleto', image: require('../../assets/transfer.png') 
         },
         {
-            id: 9, name: 'Portabilidade de salário', image: require('../../assets/work.png')
+            id: 9, name: 'Depósito por cheque', image: require('../../assets/dolar.png')
         },
         {
-            id: 10, name: 'Crédito', image: require('../../assets/payment.png')
+            id: 10, name: 'Conta MEI', image: require('../../assets/business-and-finance.png')
         },
         {
-            id: 11, name: 'Financiamento imobiliário', image: require('../../assets/dollar.png') 
+            id: 11, name: 'Agendamentos', image: require('../../assets/calendar.png') 
         },
         {
-            id: 12, name: 'Débito automático', image: require('../../assets/money.png')
+            id: 12, name: 'Portabilidade de salário', image: require('../../assets/work.png')
         },
         {
-            id: 13, name: 'Consórcio', image: require('../../assets/keys.png') 
+            id: 13, name: 'Crédito', image: require('../../assets/payment.png')
         },
         {
-            id: 14, name: 'Câmbio', image: require('../../assets/dolar.png') 
+            id: 14, name: 'Financiamento imobiliário', image: require('../../assets/dollar.png') 
         },
         {
-            id: 15, name: 'Recarga', image: require('../../assets/deposit.png')
+            id: 15, name: 'Débito automático', image: require('../../assets/money.png')
+        },
+        {
+            id: 16, name: 'Consórcio', image: require('../../assets/keys.png') 
+        },
+        {
+            id: 17, name: 'Câmbio', image: require('../../assets/dolar.png') 
+        },
+        {
+            id: 18, name: 'Recarga', image: require('../../assets/deposit.png')
         }
     ];
 
+    function handleClick() {
+        setIsClick(!isClick);
+
+        console.log(isClick);
+    }
+
     return (
         <Container>
-            <Box 
-                data={array}
-                numColumns={3}
-                renderItem={({ item }) => (
-                   <Area key={item.id}>
-                        <AreaImage>
-                            <Icon source={item.image} />
-                        </AreaImage>
+            {isClick ? 
+                (
+                    <Box 
+                    data={array}
+                    numColumns={3}
+                    renderItem={({ item }) => (
+                        <Area key={item.id}>
+                            <AreaImage>
+                                <Icon source={item.image} />
+                            </AreaImage>
 
-                        <Title> {item.name} </Title>
-                   </Area>
-                )}   
-            />
+                            <Title> {item.name} </Title>
+                    </Area>
+                    )}   
+                />
+                )
+            : (
+                <Box 
+                    data={arrFirst}
+                    numColumns={3}
+                    renderItem={({ item }) => (
+                        <Area key={item.id}>
+                            <AreaImage>
+                                <Icon source={item.image} />
+                            </AreaImage>
+
+                            <Title> {item.name} </Title>
+                    </Area>
+                    )}   
+                />
+            ) }
             
             <Card>
-                <ArrowDown name="chevron-down" color="#FF8700" size={45} />
+                <OpenButton onPress={handleClick}>
+                    <ArrowDown name="chevron-down" color="#FF8700" size={45} />
+                </OpenButton>
             </Card>
         </Container>
     );
