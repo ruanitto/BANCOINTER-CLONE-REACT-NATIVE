@@ -1,6 +1,7 @@
 import React from 'react';
+import { Text } from 'react-native';
 
-import { Container } from './styles';
+import { Container, Box, Card, Area } from './styles';
 
 export default function Home() {
     return (

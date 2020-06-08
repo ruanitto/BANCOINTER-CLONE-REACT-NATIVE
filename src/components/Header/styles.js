@@ -4,8 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 export const Container = styled(LinearGradient)`
     padding: 25px;
     height: 100%;
-    max-height: 150px;
-    
+    max-height: 150px;    
 `;
 
 export const AreaInfo = styled.View`
