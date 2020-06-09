@@ -8,7 +8,8 @@ export const Container = styled.View`
 export const Box = styled.View`
     flex-direction: row;
     justify-content: space-between;
-
+    background: #fff;
+    
     padding: 20px;
 `;
 
@@ -18,37 +19,37 @@ export const HeaderBox = styled.View`
 `;
 
 export const Card = styled.View`
-    margin-bottom: 10px;
+    width: 100%;
+    max-width: 320px;
     margin: 10px;
     text-align: center;
-
     background: #fff;
     border-radius: 8px;
 `;
 
-export const Info = styled.View`
-    align-items: center;
+export const Info = styled.View`    
+    margin: 10px auto;
 `;
 
 export const Graphic = styled.View`
-    flex: 1;
-    height: 60%;
+    
 `;
 
 export const Area = styled.View`
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 20px;
 
-    width: 100%;
-    height: 100%;
-    max-width: 90px;
-    max-height: 200px;
+    margin-top: -20px;
+`;
 
-    background: #fff;
-    border-radius: 4px;
-    margin: 5px 10px;
-    margin-bottom: 30px;
+export const Title = styled.Text`
+    font-size: 16px;
+    color: #CCCCCC;
+`;
 
-    text-align: center;
+export const Value = styled.Text`
+    font-size: 18px;
+    font-weight: bold;
+    color: ${props => props.color}
 `;

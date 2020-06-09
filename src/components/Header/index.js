@@ -11,7 +11,9 @@ import Services from '../Services';
 export default function Header() {
     const array = [
         {
-            id: 1
+            id: "1"
+        },{
+            id: "2"
         }
     ];
 
@@ -29,7 +31,7 @@ export default function Header() {
                                     
                                     <AreaValue>
                                         <Value>R$ 1290,00</Value>
-                                        <Icon name="eye" size={30} color="#fff"/>
+                                        <Icon name="eye" size={25} color="#fff"/>
                                     </AreaValue>
                                 </Box>
 
