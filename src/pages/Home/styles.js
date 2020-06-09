@@ -1,18 +1,38 @@
 import styled from 'styled-components';
 
 export const Container = styled.View`
-    flex: 1;
+    margin-top: 10px;
     background-color: #f0f0f5;
 `;
 
-export const Box = styled.FlatList`
-    margin-top: -25px;
+export const Box = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 20px;
+`;
+
+export const HeaderBox = styled.View`
+    align-items: center;
+    flex-direction: row;
 `;
 
 export const Card = styled.View`
     margin-bottom: 10px;
     margin: 10px;
     text-align: center;
+
+    background: #fff;
+    border-radius: 8px;
+`;
+
+export const Info = styled.View`
+    align-items: center;
+`;
+
+export const Graphic = styled.View`
+    flex: 1;
+    height: 60%;
 `;
 
 export const Area = styled.View`

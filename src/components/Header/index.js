@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { Container, AreaInfo, Box, Title,
@@ -8,15 +9,19 @@ import { Container, AreaInfo, Box, Title,
 import Services from '../Services';
 
 export default function Header() {
-    const array = [1];
+    const array = [
+        {
+            id: 1
+        }
+    ];
 
     return (
         <>
             <List 
                 data={array}
                 showsVerticalScrollIndicator={false}
-                renderItem={() => (
-                    <>
+                renderItem={({ item }) => (
+                    <View key={String(item.id)}>
                         <Container start={[1, 1]} colors={['#FF8700', '#FF500F']}>
                             <AreaInfo>
                                 <Box>
@@ -33,7 +38,7 @@ export default function Header() {
                         </Container>
 
                         <Services />
-                    </>
+                    </View>
                 )}
             />
         </>

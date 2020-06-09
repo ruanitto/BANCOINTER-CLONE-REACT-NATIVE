@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.View`
     background-color: #f0f0f5;
-
     margin-bottom: 30px;
 `;
 
@@ -11,7 +10,7 @@ export const Box = styled.FlatList`
 `;
 
 export const Card = styled.View`
-    background: #eee;
+    background: #fff;
     height: 25px;
     align-items: center;
     justify-content: center;
@@ -34,6 +33,7 @@ export const Area = styled.View`
     background: #fff;
     border-radius: 8px;
     margin: 5px 10px;
+    margin-bottom: 10px;
 
     padding: 10px;
 `;
@@ -55,7 +55,7 @@ export const Icon = styled.Image`
 `;
 
 export const Title = styled.Text`
-    font-size: 15px;
+    font-size: 12px;
 `;
 
 export const OpenButton = styled.TouchableOpacity`

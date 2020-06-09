@@ -5,6 +5,8 @@ import { Container, Box, Card, Area, AreaImage,
     Icon, Title, OpenButton
 } from './styles';
 
+import Home from '../../pages/Home';
+
 export default function Services() {
     const [isClick, setIsClick] = useState(false);
 
@@ -85,43 +87,28 @@ export default function Services() {
 
     return (
         <Container>
-            {isClick ? 
-                (
-                    <Box 
-                    data={array}
-                    numColumns={3}
-                    renderItem={({ item }) => (
-                        <Area key={item.id}>
-                            <AreaImage>
-                                <Icon source={item.image} />
-                            </AreaImage>
+            
+            <Box 
+                data={isClick ? array : arrFirst}
+                numColumns={3}
+                renderItem={({ item }) => (
+                    <Area key={String(item.id)}>
+                        <AreaImage>
+                            <Icon source={item.image} />
+                        </AreaImage>
 
-                            <Title> {item.name} </Title>
+                        <Title> {item.name} </Title>
                     </Area>
-                    )}   
-                />
-                )
-            : (
-                <Box 
-                    data={arrFirst}
-                    numColumns={3}
-                    renderItem={({ item }) => (
-                        <Area key={item.id}>
-                            <AreaImage>
-                                <Icon source={item.image} />
-                            </AreaImage>
-
-                            <Title> {item.name} </Title>
-                    </Area>
-                    )}   
-                />
-            ) }
+                )}   
+            />
             
             <Card>
                 <OpenButton onPress={handleClick}>
                     <ArrowDown name="chevron-down" color="#FF8700" size={45} />
                 </OpenButton>
             </Card>
+
+            <Home />
         </Container>
     );
 }
