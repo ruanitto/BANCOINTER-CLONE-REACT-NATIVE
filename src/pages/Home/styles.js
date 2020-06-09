@@ -10,7 +10,7 @@ export const Box = styled.View`
     justify-content: space-between;
     background: #fff;
     
-    padding: 20px;
+    padding: 10px 20px;
 `;
 
 export const HeaderBox = styled.View`
@@ -20,7 +20,9 @@ export const HeaderBox = styled.View`
 
 export const Card = styled.View`
     width: 100%;
-    max-width: 320px;
+    height: 100%;
+    max-width: 340px;
+    max-height: 170px;
     margin: 10px;
     text-align: center;
     background: #fff;
@@ -29,18 +31,19 @@ export const Card = styled.View`
 
 export const Info = styled.View`    
     margin: 10px auto;
+    top: 0;
 `;
 
 export const Graphic = styled.View`
-    
+    flex: 1;
 `;
 
 export const Area = styled.View`
     align-items: center;
     flex-direction: row;
     padding: 20px;
-
-    margin-top: -20px;
+    width: 100%;
+    margin-top: -30px;
 `;
 
 export const Title = styled.Text`

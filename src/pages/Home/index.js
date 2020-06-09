@@ -1,71 +1,100 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import File from 'react-native-vector-icons/Feather';
 import Eye from 'react-native-vector-icons/Feather';
-
-import { BarChart, XAxis } from 'react-native-svg-charts';
+import Credit from 'react-native-vector-icons/AntDesign';
 
 import { Container, Box, HeaderBox, Card, Area,
     Info, Graphic, Title, Value
 } from './styles';
 
-export default function Home() {
-    const fillTop = '#008000';
-    const fillDown = '#FF0000';
-    const data = [5, 2, 4, 2, 1, 2];
-    const date = ['set', 'out', 'nov', 'dex', 'jan', 'fev'];
+import BarChart from '../../components/Graph/Bar';
+import PieChart from '../../components/Graph/Pizza';
+import LineChart from '../../components/Graph/Line';
 
+export default function Home() {
     return (
         <Container>
-            <Card>
-                <Box>
-                    <HeaderBox>
-                        <File name="file-text" size={25} color="#FF8700" />
-                        <Text style={{ marginLeft: 10, color: '#CCCCCC' }}>Extrato</Text>    
-                    </HeaderBox>
+            <ScrollView horizontal={true} pagingEnabled showsHorizontalScrollIndicator={false} >
+                <Card>
+                    <Box>
+                        <HeaderBox>
+                            <File name="file-text" size={25} color="#FF8700" />
+                            <Text style={{ marginLeft: 10, color: '#CCCCCC' }}>Extrato</Text>    
+                        </HeaderBox>
 
-                    <Eye name="eye" size={25} color="#ddd" />
-                </Box>
+                        <Eye name="eye" size={25} color="#ddd" />
+                    </Box>
 
-                <Area>
-                    <Graphic>
-                        <BarChart 
-                            style={{ height: 70, width: 120, marginLeft: 10 }}
-                            data={data}
-                            svg={{ fill: fillTop }}
-                            contentInset={{ top: 10, bottom: 10 }}
-                            spacingInner={0.5}
-                        />
-                        <BarChart 
-                            style={{ height: 70, width: 120, marginLeft: 10 }}
-                            data={data}
-                            svg={{ fill: fillDown }}
-                            contentInset={{ top: 50, bottom: 60 }}
-                            spacingInner={0.5}
-                        />
-                
-                        <XAxis
-                            style={{ marginHorizontal: -10 }}
-                            data={date}
-                            formatLabel={(value, index) => value}
-                            spacingInner={0.05}
-                            spacingOuter={0.05}
-                            contentInset={{ left: 10, right: 10 }}
-                            svg={{ fontSize: 10, fill: 'gray' }}
-                        />
-                    </Graphic>
+                    <Area>
+                        <Graphic>
+                            <BarChart />
+                        </Graphic>
 
-                    <Info>
-                        <Title>Receita - fev</Title>
-                        <Value color={'#008000'}>R$ 810,00</Value>
+                        <Info>
+                            <Title>Receita - fev</Title>
+                            <Value color={'#008000'}>R$ 810,00</Value>
 
-                        <Title>Despesas - fev</Title>
-                        <Value color={'#E04021'}>R$ 599,75</Value>
-                    </Info>
+                            <Title>Despesas - fev</Title>
+                            <Value color={'#E04021'}>R$ 599,75</Value>
+                        </Info>
 
-                    
-                </Area>
-            </Card>         
+                        
+                    </Area>
+                </Card>    
+
+                <Card>
+                    <Box>
+                        <HeaderBox>
+                            <Credit name="creditcard" size={25} color="#FF8700" />
+                            <Text style={{ marginLeft: 10, color: '#CCCCCC' }}>MasterCard 3645</Text>    
+                        </HeaderBox>
+
+                        <Eye name="eye" size={25} color="#ddd" />
+                    </Box>
+
+                    <Area>
+                        <Graphic>
+                            <PieChart />
+                        </Graphic>
+
+                        <Info>
+                            <Title>Receita - fev</Title>
+                            <Value color={'#008000'}>R$ 810,00</Value>
+
+                            <Title>Despesas - fev</Title>
+                            <Value color={'#E04021'}>R$ 599,75</Value>
+                        </Info>
+
+                        
+                    </Area>
+                </Card>
+
+                <Card>
+                    <Box>
+                        <HeaderBox>
+                            <File name="file-text" size={25} color="#FF8700" />
+                            <Text style={{ marginLeft: 10, color: '#CCCCCC' }}>Plataforma Aberta Inter</Text>    
+                        </HeaderBox>
+
+                        <Eye name="eye" size={25} color="#ddd" />
+                    </Box>
+
+                    <Area>
+                        <Graphic>
+                            <LineChart />
+                        </Graphic>
+
+                        <Info>
+                            <Title>Total investido</Title>
+                            <Value color={'#008000'}>R$ 810,00</Value>
+
+                            <Title>Evolução</Title>
+                            <Value color={'#E04021'}>R$ 599,75</Value>
+                        </Info>
+                    </Area>
+                </Card>             
+            </ScrollView>
         </Container>
     );
 }
