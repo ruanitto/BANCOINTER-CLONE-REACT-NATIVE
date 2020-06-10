@@ -12,10 +12,10 @@ export default function Services() {
 
     const arrFirst = [
         {
-            id: 1, name: 'Transferências', image: require('../../assets/credit-card.png')
+            id: 1, name: 'Transferências', image: require('../../assets/change.png')
         },
         {
-            id: 2, name: 'Pagamentos', image: require('../../assets/credit-card.png')
+            id: 2, name: 'Pagamentos', image: require('../../assets/price.png')
         },
         {
             id: 3, name: 'Investimentos', image: require('../../assets/credit-card.png')
@@ -24,10 +24,10 @@ export default function Services() {
 
     const array = [
         {
-            id: 1, name: 'Transferências', image: require('../../assets/credit-card.png')
+            id: 1, name: 'Transferências', image: require('../../assets/change.png')
         },
         {
-            id: 2, name: 'Pagamentos', image: require('../../assets/credit-card.png')
+            id: 2, name: 'Pagamentos', image: require('../../assets/price.png')
         },
         {
             id: 3, name: 'Investimentos', image: require('../../assets/credit-card.png')
@@ -104,7 +104,7 @@ export default function Services() {
             
             <Card>
                 <OpenButton onPress={handleClick}>
-                    <ArrowDown name="chevron-down" color="#FF8700" size={45} />
+                    <ArrowDown name="chevron-down" color="#eee" size={45} />
                 </OpenButton>
             </Card>
 

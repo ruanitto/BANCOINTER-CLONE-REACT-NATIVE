@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.View`
-    margin-top: 10px;
     background-color: #f0f0f5;
 `;
 

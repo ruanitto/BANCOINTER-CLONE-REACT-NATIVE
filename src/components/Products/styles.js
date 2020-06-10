@@ -5,6 +5,13 @@ export const Container = styled.View`
     padding: 20px;
 `;
 
+export const Isafe = styled.View`
+    background: #fff;
+    padding: 20px;
+
+    margin-top: -20px;
+`;
+
 export const Shopping = styled.View`
     background: #f0f0f5;
     border-radius: 4px;
@@ -37,17 +44,37 @@ export const AreaInfo = styled.View`
 `;
 
 export const Title = styled.Text`
+    color: #1D1D20;
+`;
 
+export const AreaSafe = styled.View`
+    background: #f0f0f5;
+    border-radius: 4px;
+  
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 10px 10px;
+`;
+
+export const SafeAreaText = styled.View`
+    align-items: center;
+`;
+
+export const TitleSafe = styled.Text`
+    font-size: 24px;
+    font-weight: bold;
 `;
 
 export const Description = styled.Text.attrs({
     numberOfLines: 2
 })`
-    color: #CCC;
+    color: #898993;
 `;
 
 export const Box = styled.FlatList`
-
+    border: 1px solid #eee;
 `;
 
 export const Card = styled.View`
