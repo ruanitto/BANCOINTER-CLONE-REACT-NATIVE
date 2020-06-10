@@ -12,6 +12,8 @@ import BarChart from '../../components/Graph/Bar';
 import PieChart from '../../components/Graph/Pizza';
 import LineChart from '../../components/Graph/Line';
 
+import Products from '../../components/Products';
+
 export default function Home() {
     return (
         <Container>
@@ -95,6 +97,8 @@ export default function Home() {
                     </Area>
                 </Card>             
             </ScrollView>
+
+            <Products />
         </Container>
     );
 }

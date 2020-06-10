@@ -12,8 +12,6 @@ export default function Header() {
     const array = [
         {
             id: "1"
-        },{
-            id: "2"
         }
     ];
 
