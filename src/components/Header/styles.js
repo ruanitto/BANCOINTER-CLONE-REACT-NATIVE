@@ -11,6 +11,10 @@ export const List = styled.FlatList`
     
 `;
 
+export const Button = styled.TouchableOpacity`
+    
+`;
+
 export const AreaInfo = styled.View`
     align-items: center;
     flex-direction: row;

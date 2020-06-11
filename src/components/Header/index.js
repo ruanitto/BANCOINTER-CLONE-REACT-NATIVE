@@ -3,17 +3,21 @@ import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { Container, AreaInfo, Box, Title,
-    AreaValue, Value, Avatar, List
+    AreaValue, Value, Avatar, List, Button
 } from './styles';
 
 import Services from '../Services';
 
-export default function Header() {
+export default function Header({ navigation }) {
     const array = [
         {
-            id: "1"
+            id: 1
         }
     ];
+
+    function handleNavigate() {
+        navigation.navigate('Tab');
+    }
 
     return (
         <>
@@ -33,7 +37,9 @@ export default function Header() {
                                     </AreaValue>
                                 </Box>
 
-                                <Avatar source={{ uri: 'https://avatars3.githubusercontent.com/u/59968647?s=460&u=81b334046950db301a9c5a3cb0fe9b264a00c8d9&v=4' }}/>
+                                <Button onPress={handleNavigate}>
+                                    <Avatar source={{ uri: 'https://avatars3.githubusercontent.com/u/59968647?s=460&u=81b334046950db301a9c5a3cb0fe9b264a00c8d9&v=4' }}/>
+                                </Button>
                             </AreaInfo>
                         </Container>
 
