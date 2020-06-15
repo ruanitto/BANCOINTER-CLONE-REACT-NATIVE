@@ -61,3 +61,7 @@ export const Logout = styled.Text`
 export const Version = styled.Text`
     color: #CCC;
 `;
+
+export const ButtonBack = styled.TouchableOpacity`
+
+`;

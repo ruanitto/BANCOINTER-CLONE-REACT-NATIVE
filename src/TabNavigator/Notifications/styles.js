@@ -71,3 +71,7 @@ export const AreaText = styled.View`
 export const List = styled.ScrollView`
 
 `;
+
+export const ButtonBack = styled.TouchableOpacity`
+
+`;

@@ -119,3 +119,7 @@ export const Help = styled.View`
     padding: 0px 20px;
     margin-top: 20px;
 `;
+
+export const ButtonBack = styled.TouchableOpacity`
+
+`;

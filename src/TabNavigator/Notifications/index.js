@@ -4,15 +4,21 @@ import ArrowLeft from 'react-native-vector-icons/Feather';
 import Message from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { Container, AreaArrow, PerfilArea, Image, Name, Info, Agency, Account,
-    InfoArea, Area, Title, DateArea, AreaText, List
+    InfoArea, Area, Title, DateArea, AreaText, List, ButtonBack
 } from './styles';
 
-export default function Notifications() {
+export default function Notifications({ navigation }) {
+    function navigationBack() {
+        navigation.navigate('Header');
+    }
+    
     return (
         <>
             <Container>
                 <AreaArrow>
-                    <ArrowLeft name="arrow-left" color="#FF8700" size={25} />
+                    <ButtonBack onPress={navigationBack}>
+                        <ArrowLeft name="arrow-left" color="#FF8700" size={25} />
+                    </ButtonBack>
                 </AreaArrow>
 
                 <PerfilArea>

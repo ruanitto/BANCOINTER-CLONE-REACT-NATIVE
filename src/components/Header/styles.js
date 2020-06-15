@@ -49,3 +49,14 @@ export const Avatar = styled.Image`
     height: 62px;
     border-radius: 32px;
 `;
+
+export const BoxValue = styled.View`
+    background: ${props => props.isClick ? props.theme.normal : props.theme.hide};
+`;
+
+BoxValue.defaultProps = {
+    theme: {
+        hide: '#eee',
+        normal: 'transparent'
+    }
+};

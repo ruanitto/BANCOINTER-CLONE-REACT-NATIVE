@@ -10,10 +10,10 @@ import man from '../../assets/doctor.png';
 import { Container, AreaArrow, PerfilArea, Image, Name, 
     Info, Agency, Account, Area, Title, List, 
     Icon, ServicesArea, HelpArea, Shopping, Box, AreaIcon,
-    AreaInfo, Description, Help
+    AreaInfo, Description, Help, ButtonBack
 } from './styles';
 
-export default function Services() {
+export default function Services({ navigation }) {
     const array = [
         {
             id: 1, name: 'Transferências', image: require('../../assets/credit-card.png')
@@ -41,11 +41,17 @@ export default function Services() {
         }
     ];
 
+    function navigationBack() {
+        navigation.navigate('Header');
+    }
+
     return (
         <>
             <Container>
                 <AreaArrow>
-                    <ArrowLeft name="arrow-left" color="#FF8700" size={25} />
+                    <ButtonBack onPress={navigationBack}>
+                        <ArrowLeft name="arrow-left" color="#FF8700" size={25} />
+                    </ButtonBack>
                 </AreaArrow>
 
                 <PerfilArea>

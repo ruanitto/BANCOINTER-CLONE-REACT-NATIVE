@@ -38,7 +38,7 @@ export const Graphic = styled.View`
 `;
 
 export const Area = styled.View`
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
     padding: 20px;
     width: 100%;

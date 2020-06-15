@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+
+import EyeVisible from 'react-native-vector-icons/Feather';
+import EyeHide from 'react-native-vector-icons/Feather';
 
 import { Container, AreaInfo, Box, Title,
-    AreaValue, Value, Avatar, List, Button
+    AreaValue, Value, Avatar, List, Button,
+    BoxValue
 } from './styles';
 
 import Services from '../Services';
 
 export default function Header({ navigation }) {
+    const [isClick, setIsClick] = useState(true);
+
     const array = [
         {
             id: 1
@@ -17,6 +22,12 @@ export default function Header({ navigation }) {
 
     function handleNavigate() {
         navigation.navigate('Tab');
+    }
+
+    function handleHide() {
+        setIsClick(!isClick);
+
+        console.log(isClick);
     }
 
     return (
@@ -32,8 +43,17 @@ export default function Header({ navigation }) {
                                     <Title>Saldo em conta</Title>
                                     
                                     <AreaValue>
-                                        <Value>R$ 1290,00</Value>
-                                        <Icon name="eye" size={25} color="#fff"/>
+                                        <BoxValue isClick={isClick}>
+                                            <Value>R$ 1290,00</Value>
+                                        </BoxValue>
+                                        
+                                        <Button onPress={handleHide}>
+                                            {isClick ? (
+                                                <EyeVisible name="eye" size={25} color="#fff"/>
+                                            ) : (
+                                                <EyeHide name="eye-off" size={25} color="#fff"/>
+                                            )}
+                                        </Button>
                                     </AreaValue>
                                 </Box>
 
