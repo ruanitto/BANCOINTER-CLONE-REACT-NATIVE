@@ -53,5 +53,44 @@ export const Title = styled.Text`
 export const Value = styled.Text`
     font-size: 18px;
     font-weight: bold;
-    color: ${props => props.color}
+    color: ${props => props.color};
+`;
+
+export const AreaHide = styled.View`
+    align-items: center;
+    flex-direction: row;
+`;
+
+export const Image = styled.Image`
+    width: 82px;
+    height: 82px;
+`;
+
+export const TextHide = styled.Text`
+    font-size: 16px;
+
+    padding: 15px;
+    color: #CCCCCC;
+`;
+
+export const AreaText = styled.View`
+    width: 100%;
+    max-width: 230px;
+`;
+
+export const Button = styled.TouchableOpacity`
+
+`;
+
+export const AreaCardHide = styled.View`
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top: 15px;
+`;
+
+export const CardText = styled.View`
+    width: 100%;
+    max-width: 200px;
 `;
