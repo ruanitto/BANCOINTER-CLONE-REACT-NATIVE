@@ -6,13 +6,17 @@ import EyeHide from 'react-native-vector-icons/Feather';
 
 import { Container, AreaInfo, Box, Title,
     AreaValue, Value, Avatar, List, Button,
-    BoxValue, BarArea, FirstBar, SecondBar, ThirdBar
+    BoxValue, BarArea, FirstBar, SecondBar, ThirdBar,
+    ButtonPerfil
 } from './styles';
 
 import Services from '../Services';
 
 export default function Header({ navigation }) {
-    const [isClick, setIsClick] = useState(true);
+    const [isClickBalance, setIsClickBalance] = useState(true);
+    const [isClickLimit, setIsClickLimit] = useState(true);
+    const [isClickInvest, setIsClickInvest] = useState(true);
+
     const [xPos, setXPos] = useState(0);
 
     const array = [
@@ -25,8 +29,16 @@ export default function Header({ navigation }) {
         navigation.navigate('Tab');
     }
 
-    function handleHide() {
-        setIsClick(!isClick);
+    function handleHideBalance() {
+        setIsClickBalance(!isClickBalance);
+    }
+
+    function handleHideLimit() {
+        setIsClickLimit(!isClickLimit);
+    }
+
+    function handleHideInvest() {
+        setIsClickInvest(!isClickInvest);
     }
 
     function handleScroll(e) {
@@ -55,12 +67,12 @@ export default function Header({ navigation }) {
                                         <Title>Saldo em conta</Title>
                                         
                                         <AreaValue>
-                                            <BoxValue isClick={isClick}>
+                                            <BoxValue isClick={isClickBalance}>
                                                 <Value>R$ 1290,00</Value>
                                             </BoxValue>
                                             
-                                            <Button onPress={handleHide}>
-                                                {isClick ? (
+                                            <Button onPress={handleHideBalance}>
+                                                {isClickBalance ? (
                                                     <EyeVisible name="eye" size={25} color="#fff"/>
                                                 ) : (
                                                     <EyeHide name="eye-off" size={25} color="#fff"/>
@@ -79,12 +91,12 @@ export default function Header({ navigation }) {
                                         <Title>Limite disponível</Title>
                                         
                                         <AreaValue>
-                                            <BoxValue isClick={isClick}>
+                                            <BoxValue isClick={isClickLimit}>
                                                 <Value>R$ 450,09</Value>
                                             </BoxValue>
                                             
-                                            <Button onPress={handleHide}>
-                                                {isClick ? (
+                                            <Button onPress={handleHideLimit}>
+                                                {isClickLimit ? (
                                                     <EyeVisible name="eye" size={25} color="#fff"/>
                                                 ) : (
                                                     <EyeHide name="eye-off" size={25} color="#fff"/>
@@ -103,12 +115,12 @@ export default function Header({ navigation }) {
                                         <Title>Total investido</Title>
                                         
                                         <AreaValue>
-                                            <BoxValue isClick={isClick}>
+                                            <BoxValue isClick={isClickInvest}>
                                                 <Value>R$ 7.350,84</Value>
                                             </BoxValue>
                                             
-                                            <Button onPress={handleHide}>
-                                                {isClick ? (
+                                            <Button onPress={handleHideInvest}>
+                                                {isClickInvest ? (
                                                     <EyeVisible name="eye" size={25} color="#fff"/>
                                                 ) : (
                                                     <EyeHide name="eye-off" size={25} color="#fff"/>
@@ -125,9 +137,9 @@ export default function Header({ navigation }) {
                                 </ScrollView>
                             </AreaInfo>
 
-                            <Button onPress={handleNavigate}>
+                            <ButtonPerfil onPress={handleNavigate}>
                                 <Avatar source={{ uri: 'https://avatars3.githubusercontent.com/u/59968647?s=460&u=81b334046950db301a9c5a3cb0fe9b264a00c8d9&v=4' }}/>
-                            </Button>
+                            </ButtonPerfil>
                         </Container>
 
                         <Services />

@@ -19,17 +19,21 @@ export const Button = styled.TouchableOpacity`
     
 `;
 
+export const ButtonPerfil = styled.TouchableOpacity`
+    margin-bottom: 15px;
+`;
+
 export const AreaInfo = styled.View`
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
 
-    max-width: 150px;
+    max-width: 160px;
     margin-bottom: 20px;
 `;
 
 export const Box = styled.View`
-    max-width: 150px;
+    max-width: 160px;
     margin: 10px;
     
 `;
@@ -59,7 +63,7 @@ export const Avatar = styled.Image`
 
 export const BoxValue = styled.View`
     background: ${props => props.isClick ? props.theme.normal : props.theme.hide};
-    /* margin-right: 15px; */
+    margin-right: 15px;
 `;
 
 BoxValue.defaultProps = {
@@ -82,11 +86,11 @@ export const FirstBar = styled.View`
 `;
 
 export const SecondBar = styled.View`
-    border: 1px solid ${props => props.xPos == 150 ? '#fff' : '#ccc'};
+    border: 1px solid ${props => props.xPos > 0 && props.xPos < 170 ? '#fff' : '#ccc'};
     width: 30px;
 `;
 
 export const ThirdBar = styled.View`
-    border: 1px solid ${props => props.xPos == 300 ? '#fff' : '#ccc'};
+    border: 1px solid ${props => props.xPos > 160 ? '#fff' : '#ccc'};
     width: 30px;
 `;

@@ -65,3 +65,10 @@ export const Version = styled.Text`
 export const ButtonBack = styled.TouchableOpacity`
 
 `;
+
+export const Loading = styled.View`
+    flex: 1;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+`;
