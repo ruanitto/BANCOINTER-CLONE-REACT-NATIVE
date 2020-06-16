@@ -5,6 +5,10 @@ export const Container = styled(LinearGradient)`
     padding: 25px;
     height: 100%;
     max-height: 150px;
+
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
 export const List = styled.FlatList`
@@ -20,11 +24,14 @@ export const AreaInfo = styled.View`
     flex-direction: row;
     justify-content: space-between;
 
-    margin-top: 10px;
+    max-width: 150px;
+    margin-bottom: 20px;
 `;
 
 export const Box = styled.View`
-    flex-direction: column;
+    max-width: 150px;
+    margin: 10px;
+    
 `;
 
 export const Title = styled.Text`
@@ -52,6 +59,7 @@ export const Avatar = styled.Image`
 
 export const BoxValue = styled.View`
     background: ${props => props.isClick ? props.theme.normal : props.theme.hide};
+    /* margin-right: 15px; */
 `;
 
 BoxValue.defaultProps = {
@@ -60,3 +68,25 @@ BoxValue.defaultProps = {
         normal: 'transparent'
     }
 };
+
+export const BarArea = styled.View`
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+`;
+
+export const FirstBar = styled.View`
+    border: 1px solid ${props => props.xPos == 0 ? '#fff' : '#ccc'};
+    width: 30px;
+`;
+
+export const SecondBar = styled.View`
+    border: 1px solid ${props => props.xPos == 150 ? '#fff' : '#ccc'};
+    width: 30px;
+`;
+
+export const ThirdBar = styled.View`
+    border: 1px solid ${props => props.xPos == 300 ? '#fff' : '#ccc'};
+    width: 30px;
+`;

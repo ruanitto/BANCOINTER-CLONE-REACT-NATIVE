@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
 import EyeVisible from 'react-native-vector-icons/Feather';
 import EyeHide from 'react-native-vector-icons/Feather';
 
 import { Container, AreaInfo, Box, Title,
     AreaValue, Value, Avatar, List, Button,
-    BoxValue
+    BoxValue, BarArea, FirstBar, SecondBar, ThirdBar
 } from './styles';
 
 import Services from '../Services';
 
 export default function Header({ navigation }) {
     const [isClick, setIsClick] = useState(true);
+    const [xPos, setXPos] = useState(0);
 
     const array = [
         {
@@ -26,11 +27,15 @@ export default function Header({ navigation }) {
 
     function handleHide() {
         setIsClick(!isClick);
+    }
 
-        console.log(isClick);
+    function handleScroll(e) {
+        setXPos(e.nativeEvent.contentOffset.x);
+        console.log(xPos);
     }
 
     return (
+        
         <>
             <List 
                 data={array}
@@ -39,28 +44,90 @@ export default function Header({ navigation }) {
                     <View key={String(item.id)}>
                         <Container start={[1, 1]} colors={['#FF8700', '#FF500F']}>
                             <AreaInfo>
-                                <Box>
-                                    <Title>Saldo em conta</Title>
-                                    
-                                    <AreaValue>
-                                        <BoxValue isClick={isClick}>
-                                            <Value>R$ 1290,00</Value>
-                                        </BoxValue>
-                                        
-                                        <Button onPress={handleHide}>
-                                            {isClick ? (
-                                                <EyeVisible name="eye" size={25} color="#fff"/>
-                                            ) : (
-                                                <EyeHide name="eye-off" size={25} color="#fff"/>
-                                            )}
-                                        </Button>
-                                    </AreaValue>
-                                </Box>
+                                <ScrollView 
+                                    pagingEnabled={true} 
+                                    horizontal={true} 
+                                    onScroll={handleScroll}
+                                    showsHorizontalScrollIndicator={false} 
+                                >
 
-                                <Button onPress={handleNavigate}>
-                                    <Avatar source={{ uri: 'https://avatars3.githubusercontent.com/u/59968647?s=460&u=81b334046950db301a9c5a3cb0fe9b264a00c8d9&v=4' }}/>
-                                </Button>
+                                    <Box>
+                                        <Title>Saldo em conta</Title>
+                                        
+                                        <AreaValue>
+                                            <BoxValue isClick={isClick}>
+                                                <Value>R$ 1290,00</Value>
+                                            </BoxValue>
+                                            
+                                            <Button onPress={handleHide}>
+                                                {isClick ? (
+                                                    <EyeVisible name="eye" size={25} color="#fff"/>
+                                                ) : (
+                                                    <EyeHide name="eye-off" size={25} color="#fff"/>
+                                                )}
+                                            </Button>
+                                        </AreaValue>
+
+                                        <BarArea>
+                                            <FirstBar xPos={xPos} />
+                                            <SecondBar xPos={xPos} />
+                                            <ThirdBar xPos={xPos} />
+                                        </BarArea>
+                                    </Box>
+
+                                    <Box>
+                                        <Title>Limite disponível</Title>
+                                        
+                                        <AreaValue>
+                                            <BoxValue isClick={isClick}>
+                                                <Value>R$ 450,09</Value>
+                                            </BoxValue>
+                                            
+                                            <Button onPress={handleHide}>
+                                                {isClick ? (
+                                                    <EyeVisible name="eye" size={25} color="#fff"/>
+                                                ) : (
+                                                    <EyeHide name="eye-off" size={25} color="#fff"/>
+                                                )}
+                                            </Button>
+                                        </AreaValue>
+
+                                        <BarArea>
+                                            <FirstBar xPos={xPos} />
+                                            <SecondBar xPos={xPos} />
+                                            <ThirdBar xPos={xPos} />
+                                        </BarArea>
+                                    </Box>
+
+                                    <Box>
+                                        <Title>Total investido</Title>
+                                        
+                                        <AreaValue>
+                                            <BoxValue isClick={isClick}>
+                                                <Value>R$ 7.350,84</Value>
+                                            </BoxValue>
+                                            
+                                            <Button onPress={handleHide}>
+                                                {isClick ? (
+                                                    <EyeVisible name="eye" size={25} color="#fff"/>
+                                                ) : (
+                                                    <EyeHide name="eye-off" size={25} color="#fff"/>
+                                                )}
+                                            </Button>
+                                        </AreaValue>
+
+                                        <BarArea>
+                                            <FirstBar xPos={xPos} />
+                                            <SecondBar xPos={xPos} />
+                                            <ThirdBar xPos={xPos} />
+                                        </BarArea>
+                                    </Box>
+                                </ScrollView>
                             </AreaInfo>
+
+                            <Button onPress={handleNavigate}>
+                                <Avatar source={{ uri: 'https://avatars3.githubusercontent.com/u/59968647?s=460&u=81b334046950db301a9c5a3cb0fe9b264a00c8d9&v=4' }}/>
+                            </Button>
                         </Container>
 
                         <Services />
