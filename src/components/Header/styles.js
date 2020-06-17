@@ -53,6 +53,8 @@ export const Value = styled.Text`
     font-size: 18px;
     color: #FFF;
     margin-right: 15px;
+
+    opacity: ${props => props.isClick ? 1 : 0};
 `;
 
 export const Avatar = styled.Image`

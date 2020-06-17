@@ -38,7 +38,7 @@ export const Graphic = styled.View`
 `;
 
 export const Area = styled.View`
-    align-items: stretch;
+    align-items: center;
     flex-direction: row;
     padding: 20px;
     width: 100%;
@@ -93,4 +93,24 @@ export const AreaCardHide = styled.View`
 export const CardText = styled.View`
     width: 100%;
     max-width: 200px;
+`;
+
+export const TitlePie = styled.Text`
+    font-size: 14px;
+    color: #CCCCCC;
+`;
+
+export const ValuePie = styled.Text`
+    font-size: 15px;
+    font-weight: bold;
+    color: ${props => props.color};
+`;
+
+export const AreaPie = styled.View`
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: -30px;
 `;

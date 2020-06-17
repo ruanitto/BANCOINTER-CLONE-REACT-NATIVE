@@ -68,7 +68,7 @@ export default function Header({ navigation }) {
                                         
                                         <AreaValue>
                                             <BoxValue isClick={isClickBalance}>
-                                                <Value>R$ 1290,00</Value>
+                                                <Value isClick={isClickBalance}>R$ 1290,00</Value>
                                             </BoxValue>
                                             
                                             <Button onPress={handleHideBalance}>
@@ -92,7 +92,7 @@ export default function Header({ navigation }) {
                                         
                                         <AreaValue>
                                             <BoxValue isClick={isClickLimit}>
-                                                <Value>R$ 450,09</Value>
+                                                <Value isClick={isClickLimit}>R$ 450,09</Value>
                                             </BoxValue>
                                             
                                             <Button onPress={handleHideLimit}>
@@ -116,7 +116,7 @@ export default function Header({ navigation }) {
                                         
                                         <AreaValue>
                                             <BoxValue isClick={isClickInvest}>
-                                                <Value>R$ 7.350,84</Value>
+                                                <Value isClick={isClickInvest}>R$ 7.350,84</Value>
                                             </BoxValue>
                                             
                                             <Button onPress={handleHideInvest}>
