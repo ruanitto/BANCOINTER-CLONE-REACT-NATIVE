@@ -27,15 +27,15 @@ export const Area = styled.View`
 
     width: 100%;
     height: 100px;
-    max-width: 100px;
+    max-width: 102px;
     max-height: 170px;
 
     background: #fff;
     border-radius: 8px;
-    margin: 5px 10px;
+    margin: 5px 9px;
     margin-bottom: 10px;
 
-    padding: 10px;
+    padding: 8px;
 `;
 
 export const AreaImage = styled.View`
@@ -55,7 +55,9 @@ export const Icon = styled.Image`
 `;
 
 export const Title = styled.Text`
+    max-width: 90px;
     font-size: 12px;
+    text-align: center;
 `;
 
 export const OpenButton = styled.TouchableOpacity`

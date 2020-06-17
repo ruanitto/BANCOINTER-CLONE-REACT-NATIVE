@@ -142,7 +142,7 @@ export default function Header({ navigation }) {
                             </ButtonPerfil>
                         </Container>
 
-                        <Services />
+                        <Services navigation={navigation} />
                     </View>
                 )}
             />

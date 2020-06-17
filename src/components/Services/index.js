@@ -7,8 +7,9 @@ import { Container, Box, Card, Area, AreaImage,
 
 import Home from '../../pages/Home';
 
-export default function Services() {
+export default function Services({ navigation }) {
     const [isClick, setIsClick] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const arrFirst = [
         {
@@ -81,8 +82,9 @@ export default function Services() {
 
     function handleClick() {
         setIsClick(!isClick);
+        setIsOpen(!isOpen);
 
-        console.log(isClick);
+        console.log('é, deu certo!');
     }
 
     return (
@@ -104,11 +106,15 @@ export default function Services() {
             
             <Card>
                 <OpenButton onPress={handleClick}>
-                    <ArrowDown name="chevron-down" color="#eee" size={45} />
+                    {isOpen ? (
+                        <ArrowDown name="chevron-down" color="#eee" size={45} />
+                    ) : (
+                        <ArrowDown name="chevron-up" color="#eee" size={45} />
+                    )}
                 </OpenButton>
             </Card>
 
-            <Home />
+            <Home navigation={navigation} />
         </Container>
     );
 }

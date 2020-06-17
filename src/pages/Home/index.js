@@ -22,7 +22,7 @@ import LineChart from '../../components/Graph/Line';
 
 import Products from '../../components/Products';
 
-export default function Home() {
+export default function Home({ navigation }) {
     const [isClickExtract, setIsClickExtract] = useState(true);
     const [isClickCard, setIsClickCard] = useState(true);
     const [isClickPai, setIsClickPai] = useState(true);
@@ -175,7 +175,7 @@ export default function Home() {
                 </Card>             
             </ScrollView>
 
-            <Products />
+            <Products navigation={navigation} />
         </Container>
     );
 }

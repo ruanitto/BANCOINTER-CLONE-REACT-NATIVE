@@ -13,7 +13,7 @@ import shield from '../../assets/shield.png';
 
 import Invite from '../Invite';
 
-export default function Products() {
+export default function Products({ navigation }) {
     const arrFirst = [
         {
             id: 1, name: 'Casa', image: require('../../assets/products/garden.png')
@@ -113,7 +113,7 @@ export default function Products() {
                 </AreaSafe> 
             </Isafe>
 
-            <Invite />
+            <Invite navigation={navigation} />
         </>
     );
 }

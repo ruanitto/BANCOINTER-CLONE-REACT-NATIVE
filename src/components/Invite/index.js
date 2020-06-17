@@ -6,7 +6,11 @@ import { Container, AreaText, Title, Description, Button,
 
 import logo from '../../assets/invite.png';
 
-export default function Invite() {
+export default function Invite({ navigation }) {
+    function handleNavigate() {
+        navigation.navigate('Hireme');
+    }
+
     return (
         <Container>
             <AreaText>
@@ -17,7 +21,7 @@ export default function Invite() {
                     ficar livre das tarifas!
                 </Description>
 
-                <Button>
+                <Button onPress={handleNavigate}>
                     <ButtonText>Convidar</ButtonText>
                 </Button>
             </AreaText>

@@ -22,19 +22,19 @@ export default function Services({ navigation }) {
             id: 2, name: 'Pagamentos', image: require('../../assets/price.png')
         },
         {
-            id: 3, name: 'Investimentos', image: require('../../assets/credit-card.png')
+            id: 3, name: 'Investimentos', image: require('../../assets/pai.png')
         },
         {
             id: 4, name: 'Cartões', image: require('../../assets/keys.png') 
         },
         {
-            id: 5, name: 'Gift Card', image: require('../../assets/umbrella.png')
+            id: 5, name: 'Gift Card', image: require('../../assets/gift.png')
         },
         {
             id: 6, name: 'Seguros', image: require('../../assets/umbrella.png') 
         },
         {
-            id: 7, name: 'Interpag', image: require('../../assets/credit-card.png') 
+            id: 7, name: 'Interpag', image: require('../../assets/payment.png') 
         },
         {
             id: 8, name: 'Depósito por boleto', image: require('../../assets/transfer.png') 
