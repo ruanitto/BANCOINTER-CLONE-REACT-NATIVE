@@ -15,3 +15,5 @@
 - Expo Linear Gradient
 - Lottie React Native
 - Expo
+
+ASSISTA O VÍDEO NO YOUTUBE: https://youtu.be/sKmz2k65PWg
