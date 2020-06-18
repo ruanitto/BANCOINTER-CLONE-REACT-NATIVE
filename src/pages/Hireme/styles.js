@@ -10,9 +10,10 @@ export const Container = styled(LinearGradient)`
 `;
 
 export const AreaLottie = styled.View`
-    flex: 1;
     align-items: center;
     justify-content: center;
+
+    margin-bottom: 10px;
 `;
 
 export const AreaText = styled.View`

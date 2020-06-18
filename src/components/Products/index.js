@@ -67,7 +67,7 @@ export default function Products({ navigation }) {
                 data={arrFirst}
                 numColumns={3}
                 renderItem={({ item }) => (
-                    <Card key={item.id}>
+                    <Card key={String(item.id)}>
                         <AreaImage>
                             <Icon source={item.image} />
                         </AreaImage>

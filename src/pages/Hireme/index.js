@@ -1,7 +1,7 @@
 import React from 'react';
 import LottieView from 'lottie-react-native';
 
-import programmer from '../../../programador.json';
+import rocket from '../../../rocket.json';
 
 import { Container, Contactme, AreaLottie, AreaText } from './styles';
 
@@ -10,7 +10,7 @@ export default function Hire() {
         <Container colors={['#ff8700', '#ff500f']}>
             <AreaLottie>
                 <LottieView 
-                    source={programmer}
+                    source={rocket}
                     resizeMode="contain"
                     autoPlay
                     autoSize
@@ -18,9 +18,9 @@ export default function Hire() {
                 />
             </AreaLottie>
 
-            {/* <AreaText>
+            <AreaText>
                 <Contactme>Banco Inter, me contrata! ;)</Contactme>
-            </AreaText> */}
+            </AreaText>
         </Container>
     );
 }

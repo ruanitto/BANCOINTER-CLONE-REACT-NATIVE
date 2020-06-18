@@ -22,6 +22,8 @@ import LineChart from '../../components/Graph/Line';
 
 import Products from '../../components/Products';
 
+console.disableYellowBox = true;
+
 export default function Home({ navigation }) {
     const [isClickExtract, setIsClickExtract] = useState(true);
     const [isClickCard, setIsClickCard] = useState(true);

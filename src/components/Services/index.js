@@ -83,8 +83,6 @@ export default function Services({ navigation }) {
     function handleClick() {
         setIsClick(!isClick);
         setIsOpen(!isOpen);
-
-        console.log('é, deu certo!');
     }
 
     return (
@@ -107,9 +105,9 @@ export default function Services({ navigation }) {
             <Card>
                 <OpenButton onPress={handleClick}>
                     {isOpen ? (
-                        <ArrowDown name="chevron-down" color="#eee" size={45} />
-                    ) : (
                         <ArrowDown name="chevron-up" color="#eee" size={45} />
+                    ) : (
+                        <ArrowDown name="chevron-down" color="#eee" size={45} />
                     )}
                 </OpenButton>
             </Card>

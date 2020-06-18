@@ -43,7 +43,6 @@ export default function Header({ navigation }) {
 
     function handleScroll(e) {
         setXPos(e.nativeEvent.contentOffset.x);
-        console.log(xPos);
     }
 
     return (
